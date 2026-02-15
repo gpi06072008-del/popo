@@ -17,9 +17,25 @@
 </audio>
 
 <script>
-const text = `Happy Birthday My Love ❤️ 
-You are the most special person in my life.
-I am so lucky to have you 💕`;
+const text = `Happy Birthday majha lekru ❤️🎂
+
+Tuzya aalyapasun mazi life kharach change zali aahe 💕
+Tu fakt mazi girlfriend nahi, tu mazi happiness, maza peace ani mazi strength ahes 🥺💖
+
+Tuzya smile ne maza full day bright hoto ☀️😍
+Ani tu radata na, te mala ajibat nahi avadt 😤❤️
+Mi nehmi tuzyasobat asnar — good days madhe pan ani bad days madhe pan 🤝💞
+
+Devakade ekach prayer aahe 🙏
+Tu nehmich happy raha, successful raha ani mazyasobat raha 💍✨
+
+Tu majhi lucky charm ahes 🍀💖
+Ani future madhe pan mala fakt tuzya sobat life spend karaychi aahe 😘🌹
+
+Enjoy your special day baby 🎉🎁
+Aaj full queen mode madhe raha 👑🔥
+
+Love you forever majhi beautiful Baala 😘❤️✨`;
 
 let index = 0;
 
@@ -27,7 +43,7 @@ function typeEffect() {
   if (index < text.length) {
     document.getElementById("message").innerHTML += text.charAt(index);
     index++;
-    setTimeout(typeEffect, 40);
+    setTimeout(typeEffect, 35);
   }
 }
 
@@ -37,7 +53,7 @@ function startExperience() {
   typeEffect();
 }
 
-// 💖 Falling Hearts
+// Falling Hearts
 function createHeart() {
   const heart = document.createElement("div");
   heart.className = "heart";
@@ -45,12 +61,11 @@ function createHeart() {
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.animationDuration = (3 + Math.random() * 2) + "s";
   document.body.appendChild(heart);
-
   setTimeout(() => heart.remove(), 5000);
 }
 setInterval(createHeart, 300);
 
-// 🌸 Background Slideshow FIXED
+// Background slideshow
 const images = [
   "og/bg1.jpg",
   "og/bg2.jpg",
@@ -64,10 +79,7 @@ function changeBackground() {
   current = (current + 1) % images.length;
 }
 
-// Set first background immediately
 changeBackground();
-
-// Change every 4 seconds
 setInterval(changeBackground, 4000);
 
 </script>
