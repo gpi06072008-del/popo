@@ -13,7 +13,7 @@ body {
   animation: gradientMove 12s ease infinite;
 }
 
-/* Animated soft gradient background */
+/* Animated Gradient */
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -28,7 +28,7 @@ body {
   padding: 40px;
 }
 
-/* LEFT SIDE MESSAGE */
+/* LEFT SIDE */
 .left {
   width: 50%;
   display: flex;
@@ -39,18 +39,19 @@ body {
 }
 
 #clickText {
-  font-size: 40px;
+  font-size: 38px;
   margin-bottom: 20px;
   cursor: pointer;
-  text-shadow: 0 0 20px rgba(255,255,255,0.8);
   animation: glow 2s infinite alternate;
 }
 
+/* Glowing effect */
 @keyframes glow {
   from { text-shadow: 0 0 10px #fff, 0 0 20px pink; }
   to { text-shadow: 0 0 20px hotpink, 0 0 40px deeppink; }
 }
 
+/* Message Card */
 #message {
   font-size: 18px;
   line-height: 1.8;
@@ -60,58 +61,65 @@ body {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(20px);
   box-shadow: 0 0 40px rgba(255,192,203,0.6);
+  max-height: 75vh;
+  overflow-y: auto;
 }
 
-/* RIGHT SIDE PHOTOS */
+/* RIGHT SIDE */
 .right {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 35px;
+  align-items: center;
+  gap: 40px;
   padding: 40px;
 }
 
-/* Small framed zig-zag photos */
+/* PREMIUM PORTRAIT FRAME */
 .photo {
-  width: 220px;
-  border-radius: 20px;
-  padding: 10px;
+  width: 240px;
+  height: 330px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 25px;
   background: white;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-  transition: transform 0.4s ease;
-  animation: float 4s ease-in-out infinite;
+  padding: 8px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  transition: all 0.4s ease;
+  animation: float 5s ease-in-out infinite;
 }
 
-/* Zig-zag alignment */
+/* Zig-Zag Layout */
 .photo:nth-child(1) {
   align-self: flex-start;
-  transform: rotate(-5deg);
+  transform: rotate(-6deg);
 }
 
 .photo:nth-child(2) {
   align-self: flex-end;
-  transform: rotate(5deg);
+  transform: rotate(6deg);
 }
 
 .photo:nth-child(3) {
   align-self: flex-start;
-  transform: rotate(-3deg);
+  transform: rotate(-4deg);
 }
 
-/* Hover effect */
+/* Hover Effect */
 .photo:hover {
-  transform: scale(1.08) rotate(0deg);
+  transform: scale(1.07) rotate(0deg);
+  box-shadow: 0 30px 60px rgba(255, 105, 180, 0.5);
 }
 
 /* Floating animation */
 @keyframes float {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(-18px); }
   100% { transform: translateY(0px); }
 }
 
-/* Falling hearts */
+/* Falling Hearts */
 .heart {
   position: fixed;
   top: -10px;
@@ -126,8 +134,21 @@ body {
   100% { transform: translateY(100vh); opacity: 0; }
 }
 
+/* Scrollbar Style */
+#message::-webkit-scrollbar {
+  width: 6px;
+}
+#message::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.6);
+  border-radius: 10px;
+}
+
 /* Mobile Responsive */
 @media (max-width: 900px) {
+  body {
+    overflow: auto;
+  }
+
   .container {
     flex-direction: column;
     padding: 20px;
@@ -139,6 +160,11 @@ body {
   }
 
   .photo {
-    width: 180px;
+    width: 200px;
+    height: 280px;
+  }
+
+  #message {
+    max-height: none;
   }
 }
