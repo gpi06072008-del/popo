@@ -10,17 +10,14 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
   transition: background-image 1s ease-in-out;
+  overflow: hidden;
 }
 
 .overlay {
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   text-align: center;
   color: white;
   display: flex;
@@ -31,27 +28,29 @@ body {
 }
 
 #clickText {
-  font-size: 40px;
+  font-size: 42px;
   cursor: pointer;
   margin-bottom: 20px;
 }
 
 #message {
-  font-size: 28px;
+  font-size: 26px;
   max-width: 700px;
+  white-space: pre-line;
 }
 
-/* Falling Hearts */
+/* 💕 Falling Hearts */
 .heart {
   position: fixed;
   top: -10px;
-  font-size: 24px;
+  font-size: 22px;
   color: lightpink;
-  animation: fall linear infinite;
+  animation: fall linear;
 }
 
 @keyframes fall {
   to {
     transform: translateY(100vh);
+    opacity: 0;
   }
 }
