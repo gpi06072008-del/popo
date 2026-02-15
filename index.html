@@ -7,14 +7,26 @@
 </head>
 <body>
 
-<div class="overlay" onclick="startExperience()">
-  <h1 id="clickText">Click Anywhere ❤️</h1>
-  <div id="message"></div>
-</div>
-
 <audio id="bgMusic" loop>
   <source src="og/song.mp3" type="audio/mpeg">
 </audio>
+
+<div class="container" onclick="startExperience()">
+
+  <!-- LEFT SIDE MESSAGE -->
+  <div class="left">
+    <h1 id="clickText">Click Anywhere ❤️</h1>
+    <div id="message"></div>
+  </div>
+
+  <!-- RIGHT SIDE PHOTOS -->
+  <div class="right">
+    <img src="og/bg1.jpg" class="photo">
+    <img src="og/bg2.jpg" class="photo">
+    <img src="og/bg3.jpg" class="photo">
+  </div>
+
+</div>
 
 <script>
 const text = `Happy Birthday majha lekru ❤️🎂
@@ -32,6 +44,12 @@ Tu nehmich happy raha, successful raha ani mazyasobat raha 💍✨
 Tu majhi lucky charm ahes 🍀💖
 Ani future madhe pan mala fakt tuzya sobat life spend karaychi aahe 😘🌹
 
+Tu majha proud ahes, tu majha support system ahes, tu majha sagla jag ahes 🥹❤️
+Mi jari kahi veles weird behave kela tari pan lakshat thev — mi tula khup khup khup love karto 💞🔥
+
+Aplya future madhe khup plans aahet —
+Trips, late night talks, stupid fights, cute patchups, sagla sagla fakt tuzya sobat 😘🌍
+
 Enjoy your special day baby 🎉🎁
 Aaj full queen mode madhe raha 👑🔥
 
@@ -43,7 +61,7 @@ function typeEffect() {
   if (index < text.length) {
     document.getElementById("message").innerHTML += text.charAt(index);
     index++;
-    setTimeout(typeEffect, 35);
+    setTimeout(typeEffect, 30);
   }
 }
 
@@ -53,7 +71,7 @@ function startExperience() {
   typeEffect();
 }
 
-// Falling Hearts
+// 💕 Falling Hearts
 function createHeart() {
   const heart = document.createElement("div");
   heart.className = "heart";
@@ -63,24 +81,8 @@ function createHeart() {
   document.body.appendChild(heart);
   setTimeout(() => heart.remove(), 5000);
 }
+
 setInterval(createHeart, 300);
-
-// Background slideshow
-const images = [
-  "og/bg1.jpg",
-  "og/bg2.jpg",
-  "og/bg3.jpg"
-];
-
-let current = 0;
-
-function changeBackground() {
-  document.body.style.backgroundImage = "url('" + images[current] + "')";
-  current = (current + 1) % images.length;
-}
-
-changeBackground();
-setInterval(changeBackground, 4000);
 
 </script>
 
