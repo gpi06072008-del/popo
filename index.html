@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="overlay" onclick="startExperience()">
+  <h1 id="clickText">Click Anywhere ❤️</h1>
+  <div id="message"></div>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="og/song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const text = "Happy Birthday My Love ❤️ You are the most special person in my life. I am so lucky to have you 💕";
+  let index = 0;
+
+  function typeEffect() {
+    if (index < text.length) {
+      document.getElementById("message").innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeEffect, 50);
+    }
+  }
+
+  function startExperience() {
+    document.getElementById("clickText").style.display = "none";
+    document.getElementById("bgMusic").play();
+    typeEffect();
+  }
+
+  // Falling Hearts
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+
+  setInterval(createHeart, 300);
+
+  // Background Slideshow
+  const images = [
+    "og/bg1.jpg",
+    "og/bg2.jpg",
+    "og/bg3.jpg"
+  ];
+
+  let bgIndex = 0;
+
+  function changeBackground() {
+    document.body.style.backgroundImage = `url(${images[bgIndex]})`;
+    bgIndex = (bgIndex + 1) % images.length;
+  }
+
+  setInterval(changeBackground, 4000);
+  changeBackground();
+</script>
+
+</body>
+</html>
